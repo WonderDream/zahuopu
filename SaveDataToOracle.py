@@ -7,11 +7,11 @@ import math
 import cx_Oracle
 
 
-engine = create_engine('oracle+cx_oracle://channel:channel@localhost:1521/?service_name=CHNLDB', encoding="utf-8")
-conn = cx_Oracle.connect('channel/channel@localhost/CHNLDB')
+engine = create_engine('oracle+cx_oracle://user:pass@localhost:1521/?service_name=database', encoding="utf-8")
+conn = cx_Oracle.connect('user/pass@localhost/database')
 
-dataDir = 'E:/Data/Watson'
-prefix = 'watson_'.upper()
+dataDir = 'E:/Data/DataSet'
+prefix = 'dataset'.upper()
 for parent, dirname, filenames in os.walk(dataDir):
     for filename in filenames:
         fullpath = os.path.join(parent,filename)
